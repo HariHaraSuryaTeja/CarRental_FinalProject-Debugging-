@@ -15,6 +15,7 @@ public class userlogin extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_userlogin);
         final Button register=(Button)findViewById(R.id.register);
+        final Button Login=(Button)findViewById(R.id.Login);
         TextView fgtpwd=(TextView)findViewById(R.id.fgtpwd);
         fgtpwd.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -30,5 +31,13 @@ public class userlogin extends AppCompatActivity {
                 startActivity(i);
             }
         });
+        Login.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent=new Intent(userlogin.this,UsersHomePage.class);
+                startActivity(intent);
+            }
+        });
+
     }
 }
