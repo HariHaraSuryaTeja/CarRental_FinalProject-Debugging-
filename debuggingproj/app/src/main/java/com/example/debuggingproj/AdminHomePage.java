@@ -45,14 +45,14 @@ public class AdminHomePage extends AppCompatActivity {
                     String company = etcompany.getText().toString();
                     int age = Integer.parseInt(etyear.getText().toString());
 
-                    // create animal
+                    // create cars
                     Cars car = new Cars();
                     car.type = type;
                     car.name = name;
                     car.company = company;
                     car.year = age;
 
-                    // add animal to repo
+                    // add cars to repo
                     repository.addAnimal(car);
 
                     mAdapter.update();
