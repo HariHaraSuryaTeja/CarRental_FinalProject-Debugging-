@@ -9,12 +9,12 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
-public class UsersHomePage extends AppCompatActivity {
+public class AdminHomePage extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_users_home_page);
+        setContentView(R.layout.activity_admins_home_page);
         final EditText etType, etName, etcompany, etyear;
         Button btAdd;
         RecyclerView rvCars;
