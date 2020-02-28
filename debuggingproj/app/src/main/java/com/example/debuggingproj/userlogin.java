@@ -1,14 +1,24 @@
 package com.example.debuggingproj;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
+
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.AuthResult;
+import com.google.firebase.auth.FirebaseAuth;
 
 public class userlogin extends AppCompatActivity {
+    FirebaseAuth firebaseAuth;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -16,6 +26,8 @@ public class userlogin extends AppCompatActivity {
         setContentView(R.layout.activity_userlogin);
         final Button register=(Button)findViewById(R.id.register);
         final Button Login=(Button)findViewById(R.id.Login);
+        final EditText userUname = (EditText)findViewById(R.id.username);
+        final EditText userPass = (EditText)findViewById(R.id.userPass);
         TextView fgtpwd=(TextView)findViewById(R.id.fgtpwd);
         fgtpwd.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -34,8 +46,35 @@ public class userlogin extends AppCompatActivity {
         Login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent=new Intent(userlogin.this, AdminHomePage.class);
-                startActivity(intent);
+                firebaseAuth = FirebaseAuth.getInstance();
+                final String mail =userUname.getText().toString();
+                String pass = userPass.getText().toString();
+
+                if (TextUtils.isEmpty(mail)){
+                    userUname.setError("Enter a valid Email!");
+                }
+
+                if (TextUtils.isEmpty(pass)){
+                    userPass.setError("Enter a valid Password!");
+                }
+
+                if (pass.length()>=8){
+                    userPass.setError("Password should be >=8");
+                }
+                firebaseAuth.signInWithEmailAndPassword(mail,pass).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+                    @Override
+                    public void onComplete(@NonNull Task<AuthResult> task) {
+                        if (task.isSuccessful()){
+                            Toast.makeText(userlogin.this,"Loggin Successfull",Toast.LENGTH_LONG).show();
+                            Intent intent = new Intent(userlogin.this,UserHomePage.class);
+                           // intent.putExtra("Email",mail);
+                            startActivity(intent);
+                        }
+                        else {
+                            Toast.makeText(userlogin.this,"Login Failed",Toast.LENGTH_LONG).show();
+                        }
+                    }
+                });
             }
         });
 
