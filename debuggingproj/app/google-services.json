@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "347454729118",
+    "firebase_url": "https://carrentals-be20f.firebaseio.com",
+    "project_id": "carrentals-be20f",
+    "storage_bucket": "carrentals-be20f.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:347454729118:android:c8cf6feaea818b5ad8c48f",
+        "android_client_info": {
+          "package_name": "com.example.debuggingproj"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "347454729118-qo4cio0vrkf8s0q26notjc4ohaf2coun.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.debuggingproj",
+            "certificate_hash": "397d63b75d3d152257b42278980d1c8fc25b310b"
+          }
+        },
+        {
+          "client_id": "347454729118-mm4k3oonm5otd9iglo0in353jq8k884t.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAPHOjqcMsWJYHiceNoB4TqXKRHjTQSi3E"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "347454729118-mm4k3oonm5otd9iglo0in353jq8k884t.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
