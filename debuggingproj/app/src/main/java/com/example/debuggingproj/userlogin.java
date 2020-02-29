@@ -18,17 +18,22 @@ import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 
 public class userlogin extends AppCompatActivity {
+    EditText userUname, userPass;
+    Button register, Login;
+    TextView fgtpwd;
     FirebaseAuth firebaseAuth;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_userlogin);
-        final Button register=(Button)findViewById(R.id.register);
-        final Button Login=(Button)findViewById(R.id.Login);
-        final EditText userUname = (EditText)findViewById(R.id.username);
-        final EditText userPass = (EditText)findViewById(R.id.userPass);
-        TextView fgtpwd=(TextView)findViewById(R.id.fgtpwd);
+
+        userUname = findViewById(R.id.username);
+        userPass = findViewById(R.id.userPass);
+        register = findViewById(R.id.register);
+        Login = findViewById(R.id.Login);
+        fgtpwd = findViewById(R.id.fgtpwd);
+
         fgtpwd.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -36,6 +41,7 @@ public class userlogin extends AppCompatActivity {
                 startActivity(i);
             }
         });
+
         register.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -43,6 +49,7 @@ public class userlogin extends AppCompatActivity {
                 startActivity(i);
             }
         });
+
         Login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -58,7 +65,7 @@ public class userlogin extends AppCompatActivity {
                     userPass.setError("Enter a valid Password!");
                 }
 
-                if (pass.length()>=8){
+                if (pass.length()<8){
                     userPass.setError("Password should be >=8");
                 }
                 firebaseAuth.signInWithEmailAndPassword(mail,pass).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
@@ -67,7 +74,7 @@ public class userlogin extends AppCompatActivity {
                         if (task.isSuccessful()){
                             Toast.makeText(userlogin.this,"Loggin Successfull",Toast.LENGTH_LONG).show();
                             Intent intent = new Intent(userlogin.this,UserHomePage.class);
-                           // intent.putExtra("Email",mail);
+                            intent.putExtra("Email",mail);
                             startActivity(intent);
                         }
                         else {

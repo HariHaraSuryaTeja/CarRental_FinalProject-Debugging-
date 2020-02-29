@@ -17,7 +17,7 @@ import com.google.firebase.auth.FirebaseAuth;
 
 
 public class registerpage extends AppCompatActivity {
-    EditText Email, Username, Password, Firstname, Lastname, Mobile;
+    EditText Email, Username, Password, Fname, Lname, Mobile;
     Button Submit;
     FirebaseAuth firebaseAuth;
 
@@ -25,8 +25,8 @@ public class registerpage extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_registerpage);
-        Firstname = findViewById(R.id.firstnameR);
-        Lastname = findViewById(R.id.lastnameR);
+        Fname = findViewById(R.id.firstnameR);
+        Lname = findViewById(R.id.lastnameR);
         Email = findViewById(R.id.emailr);
         Username = findViewById(R.id.usernameR);
         Password = findViewById(R.id.passwordR);
@@ -41,8 +41,8 @@ public class registerpage extends AppCompatActivity {
                 final String mail = Email.getText().toString();
                 String pass = Password.getText().toString();
                 String uname = Username.getText().toString();
-                String fname = Firstname.getText().toString();
-                String lname = Lastname.getText().toString();
+                String fname = Fname.getText().toString();
+                String lname = Lname.getText().toString();
                 String mobile = Mobile.getText().toString();
 
                 if (TextUtils.isEmpty(mail)){
@@ -55,8 +55,8 @@ public class registerpage extends AppCompatActivity {
                     return;
                 }
 
-                if (pass.length()>=8){
-                    Password.setError("Password should be <=8");
+                if (pass.length()< 8){
+                    Password.setError("Password should be >=8");
                     return;
                 }
 
@@ -70,12 +70,12 @@ public class registerpage extends AppCompatActivity {
                     return;
                 }
                 if (TextUtils.isEmpty(fname)){
-                    Firstname.setError("Enter a Valid name");
+                    Fname.setError("Enter a Valid name");
                     return;
                 }
 
                 if (TextUtils.isEmpty(lname)){
-                    Lastname.setError("Enter a Valid name");
+                    Lname.setError("Enter a Valid name");
                     return;
                 }
 

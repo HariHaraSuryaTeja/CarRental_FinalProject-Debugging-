@@ -6,20 +6,30 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
+
+import com.google.firebase.auth.FirebaseAuth;
 
 public class adminlogin extends AppCompatActivity {
+
+    EditText adminLogin, adminPass;
+    Button Login;
+    FirebaseAuth firebaseAuth;
+    FirebaseAuth.AuthStateListener mAuthStateListener;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_adminlogin);
-        final Button AdminLogin=(Button)findViewById(R.id.adminLogin);
+        adminLogin = findViewById(R.id.adminUname);
+        adminPass = findViewById(R.id.adminPass);
+        Login = findViewById(R.id.adminLogin);
 
-        AdminLogin.setOnClickListener(new View.OnClickListener() {
+        Login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(adminlogin.this,AdminHomePage.class);
-                startActivity(intent);
+                firebaseAuth = FirebaseAuth.getInstance();
+                //final String adminMail = adminlogin.getText()
             }
         });
     }
