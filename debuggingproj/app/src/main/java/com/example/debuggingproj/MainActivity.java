@@ -1,4 +1,4 @@
-package com.example.debuggingproj;
+package com.finalproject.carrentalsv2;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -16,7 +16,7 @@ public class MainActivity extends AppCompatActivity {
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
-                Intent intent = new Intent(MainActivity.this, startscreen.class);
+                Intent intent = new Intent(MainActivity.this, CarSelection.class);
                 startActivity(intent);
                 finish();
 
