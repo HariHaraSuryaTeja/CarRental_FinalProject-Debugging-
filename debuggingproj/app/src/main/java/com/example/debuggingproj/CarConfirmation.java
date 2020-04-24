@@ -1,6 +1,4 @@
-package com.finalproject.carrentalsv2;
-
-import androidx.appcompat.app.AppCompatActivity;
+package com.example.debuggingproj;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -9,11 +7,13 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import androidx.appcompat.app.AppCompatActivity;
+
 public class CarConfirmation extends AppCompatActivity {
 
     ImageView imageView;
-    TextView name,year,description;
-    String carname,caryear,cardescription;
+    TextView name, price, year, description;
+    String carname,carPrice,caryear,cardescription;
     int image;
     Button confirm;
 
@@ -24,14 +24,18 @@ public class CarConfirmation extends AppCompatActivity {
 
         imageView=findViewById(R.id.nimage);
         name=findViewById(R.id.Car_name);
+        price=findViewById(R.id.car_price);
         year=findViewById(R.id.Car_year);
         description=findViewById(R.id.Car_description);
         confirm=findViewById(R.id.nextbtn);
+
         carname=getIntent().getStringExtra("Carname");
+        carPrice=getIntent().getStringExtra("Carprice");
         caryear=getIntent().getStringExtra("Caryear");
         cardescription=getIntent().getStringExtra("Cardescription");
         image=getIntent().getIntExtra("Carimage",0);
         name.setText(carname);
+        price.setText(carPrice);
         year.setText(caryear);
         description.setText(cardescription);
         imageView.setImageResource(image);
@@ -39,8 +43,8 @@ public class CarConfirmation extends AppCompatActivity {
         confirm.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent movie=new Intent(getApplicationContext(),BookingActivity.class);
-                startActivity(movie);
+                Intent confirmation=new Intent(getApplicationContext(),PaymentPage.class);
+                startActivity(confirmation);
             }
         });
 

@@ -1,10 +1,10 @@
-package com.finalproject.carrentalsv2;
-
-import androidx.appcompat.app.AppCompatActivity;
+package com.example.debuggingproj;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 public class MainActivity extends AppCompatActivity {
     private static int time_out=1000;
@@ -16,7 +16,7 @@ public class MainActivity extends AppCompatActivity {
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
-                Intent intent = new Intent(MainActivity.this, CarSelection.class);
+                Intent intent = new Intent(MainActivity.this, CitySelection.class);
                 startActivity(intent);
                 finish();
 

@@ -1,3 +1,43 @@
 <resources>
     <string name="app_name">CarRentals</string>
+    <string-array name="cities">
+        <item>Montreal</item>
+        <item>Toronto</item>
+        <item>Brampton</item>
+        <item>Quebec City</item>
+        <item>Mont Tremblant</item>
+        <item>Montreal-Ouest</item>
+        <item>St. Michel</item>
+        <item>Greenfield Park</item>
+        <item>Ontario</item>
+        <item>British Colombia</item>
+        <item>Vancouver</item>
+        <item>Atwater</item>
+        <item>Guy-Concordia</item>
+        <item>Peel</item>
+        <item>McGill</item>
+        <item>Place-Des-Arts</item>
+        <item>Saint-Laurent</item>
+        <item>Berri-Uquam</item>
+        <item>Sherbrook</item>
+        <item>Mont-Royal</item>
+        <item>Laurier</item>
+        <item>Rosemont</item>
+        <item>Beaubien</item>
+        <item>Jarry</item>
+        <item>cremazie</item>
+        <item>Sauve</item>
+        <item>Henri-Bourassa</item>
+        <item>Atwater</item>
+        <item>Atwater</item>
+    </string-array>
+    <string-array name="streets">
+        <item>1280 Rue saint marc</item>>
+        <item>3400 Rigewood Avenue</item>>
+        <item>2525 Rue Sherbrook east</item>>
+        <item>2539 Rue Sherbrook east</item>>
+        <item>7460 Kingsley</item>>
+        <item>4311 de Maisonneuve Blvd</item>>
+        <item>660 Saint-Catherine St W</item>>
+    </string-array>>
 </resources>

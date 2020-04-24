@@ -1,4 +1,4 @@
-package com.finalproject.carrentalsv2;
+package com.example.debuggingproj;
 
 import android.content.Context;
 import android.content.Intent;
@@ -37,6 +37,7 @@ public class CarsAdapter  extends  RecyclerView.Adapter<CarsAdapter.ViewHolder> 
     public void onBindViewHolder(@NonNull CarsAdapter.ViewHolder holder, int position) {
         final CarData carData=Data.get(position);
         holder.nameofcar.setText(carData.getCarName());
+        holder.priceofcar.setText(carData.getCarPrice());
         holder.ageofcar.setText(carData.getCarYear());
         holder.decriptionofcar.setText(carData.getCarDescription());
         holder.imageofcar.setImageDrawable(context.getResources().getDrawable(carData.Carimage));
@@ -47,6 +48,7 @@ public class CarsAdapter  extends  RecyclerView.Adapter<CarsAdapter.ViewHolder> 
                 intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                 intent.putExtra("Carimage",carData.getCarimage());
                 intent.putExtra("Carname",carData.getCarName());
+                intent.putExtra("Carprice",carData.getCarPrice());
                 intent.putExtra("Caryear",carData.getCarYear());
                 intent.putExtra("Cardescription",carData.getCarDescription());
                 context.startActivity(intent);
@@ -63,12 +65,13 @@ public class CarsAdapter  extends  RecyclerView.Adapter<CarsAdapter.ViewHolder> 
 
     public class ViewHolder extends RecyclerView.ViewHolder {
         ImageView imageofcar;
-        TextView nameofcar,ageofcar,decriptionofcar;
+        TextView nameofcar,priceofcar,ageofcar,decriptionofcar;
         RelativeLayout relativeLayout;
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
             imageofcar=itemView.findViewById(R.id.Car_image);
             nameofcar=itemView.findViewById(R.id.Car_name);
+            priceofcar=itemView.findViewById(R.id.car_price);
             ageofcar=itemView.findViewById(R.id.Car_year);
             decriptionofcar=itemView.findViewById(R.id.Car_description);
             relativeLayout=itemView.findViewById(R.id.relativelist);

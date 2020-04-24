@@ -11,14 +11,12 @@
         android:roundIcon="@drawable/poster2_15_105310"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".CarSelectActivity"></activity>
-        <activity android:name=".CarsViewHolder" />
-        <activity android:name=".AdminHomePage" />
-        <activity android:name=".userforgotpwd" />
-        <activity android:name=".registerpage" />
-        <activity android:name=".userlogin" />
-        <activity android:name=".adminlogin" />
-        <activity android:name=".startscreen" />
+        <activity android:name=".PickupAndDropOff"></activity>
+        <activity android:name=".CitySelection" />
+        <activity android:name=".CarSelection" />
+        <activity android:name=".BookingConfirmation" />
+        <activity android:name=".PaymentPage" />
+        <activity android:name=".CarConfirmation" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

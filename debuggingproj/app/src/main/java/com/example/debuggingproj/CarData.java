@@ -1,8 +1,8 @@
-package com.finalproject.carrentalsv2;
+package com.example.debuggingproj;
 
 public class CarData {
     int Carimage;
-    String CarName,CarYear,CarDescription;
+    String CarName,CarPrice,CarYear,CarDescription;
 
     public int getCarimage() {
         return Carimage;
@@ -18,6 +18,14 @@ public class CarData {
 
     public void setCarName(String carName) {
         CarName = carName;
+    }
+
+    public String getCarPrice() {
+        return CarPrice;
+    }
+
+    public void setCarPrice(int carPrice) {
+        this.Carimage = carPrice;
     }
 
     public String getCarYear() {
@@ -36,9 +44,10 @@ public class CarData {
         CarDescription = carDescription;
     }
 
-    public CarData(int carimage, String carName, String carYear, String carDescription) {
+    public CarData(int carimage, String carName,String carPrice, String carYear, String carDescription) {
         this.Carimage = carimage;
         CarName = carName;
+        CarPrice = carPrice;
         CarYear = carYear;
         CarDescription = carDescription;
     }

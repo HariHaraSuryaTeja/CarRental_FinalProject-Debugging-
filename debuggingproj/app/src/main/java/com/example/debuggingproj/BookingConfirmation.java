@@ -1,11 +1,11 @@
-package com.finalproject.carrentalsv2;
-
-import androidx.appcompat.app.AppCompatActivity;
+package com.example.debuggingproj;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 public class BookingConfirmation extends AppCompatActivity {
 
@@ -21,7 +21,7 @@ public class BookingConfirmation extends AppCompatActivity {
         Home.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent home = new Intent(getApplicationContext(),CarSelection.class);
+                Intent home = new Intent(getApplicationContext(),CitySelection.class);
                 startActivity(home);
             }
         });
